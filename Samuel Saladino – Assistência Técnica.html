@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)file:///home/samuel/Documents/Empresa/Samuel_SALADINO_Assist%C3%AAncia_T%C3%A9cnica.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Saladino – Assistência Técnica</title>
+<link href="./Samuel Saladino – Assistência Técnica_files/css2" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:       #07111e;
+  --bg2:      #0d1b2a;
+  --blue:     #00b4ff;
+  --blue2:    #0050cc;
+  --cyan:     #00e5ff;
+  --text:     #cce4f7;
+  --text2:    #7aa8cc;
+  --white:    #eaf4ff;
+  --card-bg:  rgba(255,255,255,0.03);
+  --card-bdr: rgba(0,180,255,0.14);
+  --radius:   14px;
+}
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Exo 2',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* ─── GRID BG ─── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,180,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,180,255,0.04) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+
+/* ─── PAGE ─── */
+.page { position:relative; z-index:1; max-width:960px; margin:0 auto; padding:0 16px 48px; }
+
+/* ─── HERO ─── */
+.hero {
+  position:relative;
+  background:linear-gradient(135deg,#0d1b2a,#071628 60%,#040e1a);
+  border:1px solid var(--card-bdr);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:28px;
+  display:flex;
+  align-items:stretch;
+}
+.hero::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px; z-index:5;
+  background:linear-gradient(90deg,transparent,var(--blue),var(--cyan),var(--blue2),transparent);
+}
+.c-tl,.c-br { position:absolute; width:36px; height:36px; z-index:6; }
+.c-tl { top:10px; left:10px; border-top:2px solid var(--blue); border-left:2px solid var(--blue); border-radius:4px 0 0 0; }
+.c-br { bottom:10px; right:10px; border-bottom:2px solid var(--blue); border-right:2px solid var(--blue); border-radius:0 0 4px 0; }
+
+.glow { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; }
+.glow-a { width:300px; height:300px; background:rgba(0,100,255,0.13); top:-80px; right:60px; }
+.glow-b { width:200px; height:200px; background:rgba(0,200,255,0.08); bottom:0; left:80px; }
+
+/* ── HERO LEFT ── */
+.hero-left {
+  flex:0 0 280px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:44px 28px;
+  border-right:1px solid var(--card-bdr);
+  position:relative; z-index:2;
+}
+.avatar-ring {
+  width:120px; height:120px; border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  padding:3px; position:relative; margin-bottom:20px;
+}
+.avatar-ring::before {
+  content:''; position:absolute; inset:-9px; border-radius:50%;
+  border:1px dashed rgba(0,180,255,0.4);
+  animation:spin 14s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+.avatar-inner {
+  width:100%; height:100%; border-radius:50%;
+  background:var(--bg2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:52px;
+}
+.hero-name {
+  font-family:'Rajdhani',sans-serif;
+  font-size:26px; font-weight:700; line-height:1.1;
+  text-align:center; letter-spacing:1px;
+  color:var(--white);
+  text-shadow:0 0 20px rgba(0,180,255,0.5);
+}
+.hero-name span { color:var(--blue); }
+.badge {
+  margin-top:10px;
+  background:linear-gradient(90deg,var(--blue2),var(--blue));
+  border-radius:6px; padding:5px 14px;
+  font-size:11px; font-weight:700; letter-spacing:2.5px;
+  color:#fff; text-transform:uppercase;
+}
+.phone-box {
+  margin-top:24px;
+  display:flex; align-items:center; gap:10px;
+  background:rgba(0,180,255,0.08);
+  border:1px solid rgba(0,180,255,0.28);
+  border-radius:10px; padding:10px 18px;
+}
+.phone-box span:first-child { font-size:18px; }
+.phone-num { font-size:16px; font-weight:700; color:var(--cyan); letter-spacing:1px; }
+
+/* ── HERO RIGHT ── */
+.hero-right {
+  flex:1; padding:36px 32px 36px 36px;
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.section-label {
+  font-size:10px; letter-spacing:4px; color:var(--blue);
+  text-transform:uppercase; margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+.section-label::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg,rgba(0,180,255,0.5),transparent);
+}
+.services-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px 16px; }
+.svc {
+  display:flex; align-items:flex-start; gap:9px;
+  padding:9px 12px; border-radius:8px;
+  background:var(--card-bg); border:1px solid var(--card-bdr);
+  position:relative; overflow:hidden;
+  transition:border-color .25s,background .25s;
+}
+.svc::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:linear-gradient(180deg,var(--blue),var(--blue2));
+  border-radius:3px 0 0 3px;
+}
+.svc:hover { border-color:rgba(0,180,255,.38); background:rgba(0,180,255,.07); }
+.svc-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
+.svc-text strong { display:block; font-size:13px; font-weight:700; color:var(--white); }
+.svc-text span { font-size:11.5px; color:var(--text2); }
+
+/* ─── PHOTOS ─── */
+.photos-section { margin-top:32px; }
+.photos-title {
+  font-size:10px; letter-spacing:4px; color:var(--blue);
+  text-transform:uppercase; margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+.photos-title::after {
+  content:''; flex:1; height:1px;
+  background:linear-gradient(90deg,rgba(0,180,255,0.5),transparent);
+}
+.photos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.photo-card {
+  border-radius:var(--radius); overflow:hidden;
+  border:1px solid var(--card-bdr);
+  position:relative; aspect-ratio:4/3;
+  background:var(--bg2);
+}
+.photo-card img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .4s ease;
+}
+.photo-card:hover img { transform:scale(1.06); }
+.photo-card::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top,rgba(7,17,30,.78) 0%,transparent 55%);
+}
+.photo-label {
+  position:absolute; bottom:0; left:0; right:0;
+  z-index:2; padding:10px 14px;
+  font-size:12px; font-weight:700; color:var(--white); letter-spacing:.5px;
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
+}
+.photo-label::before {
+  content:''; display:inline-block;
+  width:6px; height:6px; border-radius:50%;
+  background:var(--blue); margin-right:7px; vertical-align:middle;
+  box-shadow:0 0 6px var(--blue);
+}
+
+/* ─── FOOTER ─── */
+.footer-strip {
+  margin-top:24px;
+  background:linear-gradient(90deg,rgba(0,80,204,0.18),rgba(0,180,255,0.12),rgba(0,80,204,0.18));
+  border:1px solid rgba(0,180,255,0.2);
+  border-radius:var(--radius);
+  padding:16px 28px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.footer-strip .tag { font-size:12px; color:var(--text2); font-weight:600; letter-spacing:1px; }
+.footer-strip .cta {
+  background:linear-gradient(90deg,var(--blue2),var(--blue));
+  border:none; border-radius:8px;
+  padding:10px 24px;
+  font-family:'Exo 2',sans-serif; font-size:13px; font-weight:700;
+  color:#fff; letter-spacing:1px; cursor:pointer;
+  text-decoration:none; display:inline-block;
+  transition:opacity .2s;
+}
+.footer-strip .cta:hover { opacity:.85; }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .hero { flex-direction:column; }
+  .hero-left { flex:none; width:100%; border-right:none; border-bottom:1px solid var(--card-bdr); padding:36px 24px 28px; }
+  .hero-right { padding:28px 20px 32px; }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .photos-grid { grid-template-columns:repeat(2,1fr); }
+  .c-br { display:none; }
+}
+@media(max-width:480px){
+  .page { padding:0 12px 40px; }
+  .hero { margin-top:18px; border-radius:12px; }
+  .hero-left { padding:28px 16px 22px; }
+  .avatar-ring { width:100px; height:100px; }
+  .avatar-inner { font-size:42px; }
+  .hero-name { font-size:22px; }
+  .hero-right { padding:22px 16px 26px; }
+  .services-grid { grid-template-columns:1fr; gap:8px; }
+  .photos-grid { grid-template-columns:1fr; }
+  .footer-strip { flex-direction:column; text-align:center; }
+  .footer-strip .cta { width:100%; text-align:center; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="c-tl"></div>
+    <div class="c-br"></div>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+
+    <div class="hero-left">
+      <div class="avatar-ring">
+        <div class="avatar-inner">💻</div>
+      </div>
+      <div class="hero-name">Samuel<br><span>Saladino</span></div>
+      <div class="badge">Technical Assistence</div>
+      <div class="phone-box">
+        <span>📱</span>
+        <span class="phone-num">(21) 98524-9813</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="section-label">Serviços disponíveis</div>
+      <div class="services-grid">
+        <div class="svc"><span class="svc-icon">💰</span><div class="svc-text"><strong>Orçamento Grátis</strong><span>Sem compromisso</span></div></div>
+        <div class="svc"><span class="svc-icon">🔧</span><div class="svc-text"><strong>Troca de Peças</strong><span>Componentes originais</span></div></div>
+        <div class="svc"><span class="svc-icon">🛡️</span><div class="svc-text"><strong>Manutenção Preventiva</strong><span>Prevenção de falhas</span></div></div>
+        <div class="svc"><span class="svc-icon">⚙️</span><div class="svc-text"><strong>Troca de Componentes</strong><span>Hardware completo</span></div></div>
+        <div class="svc"><span class="svc-icon">🚀</span><div class="svc-text"><strong>Upgrade</strong><span>Melhoria do seu equipamento</span></div></div>
+        <div class="svc"><span class="svc-icon">💿</span><div class="svc-text"><strong>Formatação</strong><span>Sistema limpo e seguro</span></div></div>
+        <div class="svc"><span class="svc-icon">📦</span><div class="svc-text"><strong>Instalação de Software</strong><span>Programas e antivírus</span></div></div>
+        <div class="svc"><span class="svc-icon">🖥️</span><div class="svc-text"><strong>Atendimento N1 e N2</strong><span>Presencial e Remoto</span></div></div>
+        <div class="svc"><span class="svc-icon">🌐</span><div class="svc-text"><strong>Config. de Redes</strong><span>Wi-Fi e LAN</span></div></div>
+        <div class="svc"><span class="svc-icon">🖧</span><div class="svc-text"><strong>Cabeamento Estrutural</strong><span>Ethernet e Fibra óptica</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <div class="photos-section">
+    <div class="photos-title">Áreas de atuação</div>
+    <div class="photos-grid">
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/photo-1496181133206-80ce9b88a853" alt="Notebook" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Notebooks</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/photo-1518770660439-4636190af475" alt="Hardware" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Hardware &amp; Componentes</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/c04dbdffa1ee6c73a899b5f23cc2cf19.jpg" alt="Redes" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Infraestrutura de Redes</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/photo-1547082299-de196ea013d6" alt="Desktop" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1547082299-de196ea013d6?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Desktops</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/fibraoptica_cabos.jpg" alt="Cabeamento" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Fibra Óptica &amp; Cabeamento Estrutural</div>
+      </div>
+
+      <div class="photo-card">
+        <img src="./Samuel Saladino – Assistência Técnica_files/3ddf3ac58f1a84bc607a611d6c82e069_screen.png" alt="Suporte remoto" loading="lazy" onerror="this.src=&#39;https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&amp;auto=format&amp;fit=crop&#39;">
+        <div class="photo-label">Suporte Remoto</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-strip">
+    <div class="tag">📍 Atendimento presencial e remoto &nbsp;|&nbsp; Rio de Janeiro – RJ</div>
+    <a href="https://wa.me/+5521985249813" class="cta">📲 Chamar agora</a>
+  </div>
+
+</div>
+
+
+</body></html>
